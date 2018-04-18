@@ -1,0 +1,96 @@
+Veronica jazmin quintero valencia 
+
+
+Analisis de desarrollo de sistemas de informacion 
+
+
+ficha 1597568 
+  
+
+PRIMER PSEUDOCODIGO: Estoy dormida y senti deseos de ir al baño.
+
+* Abro los hojos 
+* me siento en la cama 
+* bajo los pies al piso 
+* me paro 
+* camino 5 pasos al frente 
+* volteo a la derecha 
+* camino 10 pasos al frante 
+* volteo a la derecha 
+* camino 5 pasos al frente 
+* abro la puerta 
+* entro 
+* sierro la puerta 
+* levanto la tapa del sanitario 
+* me bajo la ropa 
+* me ciento en el sanitrario 
+* hago mis necesidades 
+* me paro 
+* me subo la ropa 
+* baseo el sanitario 
+* abro la puerta 
+* bajo un escalon 
+* cierro la puerta
+* camino 5 pasos  
+* volteo a la izquierda  
+* camino 10 pasos 
+* volteo a la izquierda 
+* camino 5 pasos 
+* me siento en la cama 
+* subo los pies a la cama 
+* me acuesto 
+* cierro los hojos
+
+
+
+SEGUNDO PSEUDOCODIGO: Estoy en el comedor y me dieron ganas de comerme un huevo. 
+
+
+* me paro del comedor 
+* camino 10 pasos 
+* busco el sarten de huevos 
+* prendo la estufa 
+* pongo el sarten 
+* busco la mantequilla 
+* hecho mantequillan en el sarten  
+* busco el huevo 
+* le doi un golpecito al huevo 
+* lo abro por encima de el sarten 
+* lo hechho en el sarten 
+* espero que este frito 
+* busco una cuchara
+* busco un  plato  
+* saco el huevo con la cuchara 
+* pongo el huevo en el plato 
+* le agrego sal 
+* volteo 180° 
+* camino 10 pasos 
+* me siento en el comedor 
+* me como el huevo 
+
+
+
+third PSEUDOCODIGO : I'm at the door of the house and I want to eat ice cream.
+
+
+* I see the ice cream man a block from my house.
+* right turn     
+* path 15 steps
+* I order the ice cream. 
+* I'll pay for it 
+* I get the ice cream. 
+* left turn 
+* path 15 steps 
+* I got to the door of my house and ate the ice cream.  
+
+
+FOUR PSEUDOCODIGO: go to the SENA. 
+
+
+* I get up
+* I bathe  
+* I dress myself 
+* breakfast 
+* myself 
+* I do my hair and makeup 
+* I'm leaving  
