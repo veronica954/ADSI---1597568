@@ -7,9 +7,9 @@ Analisis de desarrollo de sistemas de informacion
 ficha 1597568 
   
 
-PRIMER PSEUDOCODIGO: Estoy dormida y senti deseos de ir al baño.
+PRIMER PSEUDOCODIGO: Estoy dormida y senti deseos de ir al baï¿½o.
 
-* Abro los hojos 
+* Abro los hojos.
 * me siento en la cama 
 * bajo los pies al piso 
 * me paro 
@@ -63,7 +63,7 @@ SEGUNDO PSEUDOCODIGO: Estoy en el comedor y me dieron ganas de comerme un huevo.
 * saco el huevo con la cuchara 
 * pongo el huevo en el plato 
 * le agrego sal 
-* volteo 180° 
+* volteo 180ï¿½ 
 * camino 10 pasos 
 * me siento en el comedor 
 * me como el huevo 
