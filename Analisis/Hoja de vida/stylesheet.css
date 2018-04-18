@@ -1,0 +1,52 @@
+.marco{
+	border-radius: 50px;
+	background-color:withe ;
+	width: 1200px;
+}
+body{
+	background-color: #CEF6F5;
+	background-attachment: fixed;
+	display: flex;
+	flex-direction: column;
+}
+.contenedor{
+	display: flex;
+	flex-direction: row;
+}
+.instituto{
+	flex-grow: 1;
+
+}
+.personal{
+	flex-grow: 1;
+}
+fieldset{
+	border: solid 3px black;
+	border-radius: 20px;
+	margin-top: 20px
+
+}
+legend{
+	border: solid 4px gray;
+	border-radius: 10px;
+	background-color: #58D3F7;
+	padding: 5PX;
+	margin: 10PX;
+}
+span{
+	font-family: fantasy;
+}
+.border{
+	border: dashed 5PX gray;
+	margin: 20px;
+	padding: 50px;
+	border-radius: 50px;
+}
+ @media (max-width:767.98px){
+	body{
+background-color: rosybrown;
+	} 
+	.contenedor{
+		 flex-direction: column;
+	 }
+ }
