@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Veronica Quintero</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jss/jquery-3.3.1.min.js"></script>
+    <script src="jss/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="jss/bootstrap.min.css">
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+        
+        <script>
+          $(function() {
+           $( "#sortable" ).sortable();
+           $( "#sortable" ).disableSelection();
+          });
+        </script>  
+    </head>
+    <body>
+<!--menu  y con desplegable -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:pink;">
+        <a class="navbar-brand" href="menu.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="PUS.html">Puzzle</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="calcularajva.html">Calculadora</a>
+            </li>
+            <!-- empieza el despegable -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Music
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="#">rock</a>
+                <a class="dropdown-item" href="#">meta</a>
+                <a class="dropdown-item" href="#">pop</a>
+                <a class="dropdown-item" href="#">rap</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">search</a>
+              </div>
+            </li>
+            <!-- termina el despegable -->
+            
+
+            </ul>
+        </div>
+      </nav>
+      <!-- TERMINA EL MENU DESPEGABLE -->
+      <div class="ejercicio">
+            <ul id="sortable">
+              <li><img id="p1" src="puzzle/rafael_8.jpg" alt=""/></li>
+              <li><img id="p2" src="puzzle/rafael_4.jpg" alt=""/></li>
+              <li><img id="p3" src="puzzle/rafael_6.jpg" alt=""/></li>
+              <li><img id="p4" src="puzzle/rafael_2.jpg" alt=""/></li>
+              <li><img id="p5" src="puzzle/rafael_9.jpg" alt=""/></li>
+              <li><img id="p6" src="puzzle/rafael_3.jpg" alt=""/></li>
+              <li><img id="p7" src="puzzle/rafael_7.jpg" alt=""/></li>
+              <li><img id="p8" src="puzzle/rafael_1.jpg" alt=""/></li>
+              <li><img id="p9" src="puzzle/rafael_5.jpg" alt=""/></li>
+            </ul>
+            <footer>
+        <div class="clear"> </div>
+        
+          </div>
+          
+</body>
+ </html>

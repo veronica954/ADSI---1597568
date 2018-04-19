@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Ejercicio  modulo 9 obligatorio</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script type="text/javascript" src="http://zeptojs.com/zepto.min.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		<script type="text/javascript" src="http://hpneo.github.io/gmaps/gmaps.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<style>
+			body{
+				font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif;
+			}
+			
+			#titulo {
+				display: block;
+				width: 100%;
+				position: absolute;
+				top: 0px:
+				left: 100px;
+			}
+			
+			.derecha {
+				text-align: left;
+				width: 49.5%;
+				display: inline-block;
+				height:28px;
+			}
+			
+			.izquierda {
+				text-align: right;
+				width: 49.5%;
+				display: inline-block;
+				height:28px;
+			}
+			
+			#compact {
+				width: 30px;
+				height: 30px;
+				cursor:pointer;
+			}
+			
+			#latlng{
+				display: block;
+				margin: 0;
+				padding: 0;
+				position: absolute; /* posición absoluta a navegador */
+				top: 0px;           /* ajusta a borde de navegador */
+				left: 0px;
+				right: 0px;
+				height: 50px;
+			}
+			
+			#map{
+				display: block;
+				margin: 0;
+				padding: 0;
+				position: absolute; /* posición absoluta a navegador */
+				top: 70px;      /* 0px debajo de borde de navegador */
+				left: 0px;        /* ajusta a borde de navegador */
+				right: 0px;
+				bottom: 0px;
+				background: rgba(0,255,0,0.5); /* verde si no hay mapa */
+			}
+		</style>
+		<script type="text/javascript">
+			var map, lat, lng;
+			var lat_origen, lng_origen, lat_destino, lng_destino;
+
+			$(document).on("pageinit",function(event){
+				$("#compact").on("tap",function(event){
+					map.removeMarkers();
+					map.removePolylines();
+					
+					map.addMarker({ lat: lat_origen, lng: lng_origen});
+					map.addMarker({ lat: lat_destino, lng: lng_destino});
+					
+					map.drawRoute({
+						origin: [lat_origen, lng_origen],
+						destination: [lat_destino, lng_destino],
+						travelMode: 'driving',
+						strokeColor: '#000000',
+						strokeOpacity: 0.6,
+						strokeWeight: 5
+					});
+				});
+			});
+			
+			$(function(){
+				
+				function enlazarMarcador(e){
+					map.drawRoute({
+						origin: [lat, lng],
+						destination: [e.latLng.lat(), e.latLng.lng()],
+						travelMode: 'driving',
+						strokeColor: '#000000',
+						strokeOpacity: 0.6,
+						strokeWeight: 5
+					});
+					
+					lat = e.latLng.lat();
+					lng = e.latLng.lng();
+					
+					lat_destino = lat;
+					lng_destino = lng;
+					
+					map.addMarker({ lat: lat, lng: lng});
+				};
+				
+				function geolocalizar(){
+					GMaps.geolocate({
+						success: function(position){
+							lat = position.coords.latitude;
+							lng = position.coords.longitude;
+							
+							lat_origen = lat;
+							lng_origen = lng;
+							
+							map = new GMaps({
+								el: '#map',
+								lat: lat,
+								lng: lng,
+								click: enlazarMarcador,
+								tap: enlazarMarcador
+							});
+							map.addMarker({ lat: lat, lng: lng});
+						},
+						error: function(error) {
+							alert('Geolocalización falla: '+error.message);
+						},
+						not_supported: function(){
+							alert("Su navegador no soporta geolocalización");
+						},
+					});
+				};
+			
+				geolocalizar();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="titulo">
+			<div class="derecha">
+				<h1>Geolocalización</h1>
+			</div>
+			<div class="izquierda">
+				<img id="compact" src="http://image005.flaticon.com/1/svg/32/32517.svg">
+			</div>
+		<div>
+
+		<div id="map"></div>
+	</body>
+</html>

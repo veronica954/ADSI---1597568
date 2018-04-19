@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo</title>
+    <meta charset="utf-8">
+    
+    <style type="text/css">
+        h1 {
+            color:white;
+            background-color: #6982C8;
+            padding: .5em 2em;
+            text-align: center;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var num, acc = 0,
+            op = "",
+            oMsj = Object;
+
+        function mas() {
+            acc = +num.value;
+            op = "+";
+            mostrarMensaje(op);
+        }
+
+        function menos() {
+            acc = +num.value;
+            op = "-";
+            mostrarMensaje(op);
+        }
+
+        function multiplica() {
+            acc = +num.value;
+            op = "*";
+            mostrarMensaje(op);
+        }
+
+        function divide() {
+            acc = +num.value;
+            op = "/";
+            mostrarMensaje(op);
+        }
+
+        function x_elevado_y() {
+            acc = +num.value;
+            op = "x^y";
+            mostrarMensaje(op);
+        }
+
+        function cuadrado() {
+            acc = +num.value;
+            op = "x^2";
+            calcular();
+        }
+
+        function inversa() {
+            acc = +num.value;
+            op = "1/x";
+            calcular();
+        }
+
+        function raizCuadrada() {
+            acc = +num.value;
+            op = "sqrt(x)";
+            calcular();
+        }
+
+        function parteEntera() {
+            acc = +num.value;
+            op = "ent(x)";
+            calcular();
+        }
+
+        function calcular() {
+            clear_msj();
+            if (op === "+") {
+                num.value = (+acc) + (+num.value);
+            } else if (op === "-") {
+                num.value = (+acc) - (+num.value);
+            } else if (op === "*") {
+                num.value = (+acc) * (+num.value);
+            } else if (op === "/") {
+                num.value = (+acc) / (+num.value);
+            } else if (op === "x^y") {
+                num.value = (Math.pow(+acc, +num.value));
+            } else if (op === "x^2") {
+                num.value = (+acc) * (+acc);
+            } else if (op === "1/x") {
+                num.value = 1 / (+acc);
+            } else if (op === "sqrt(x)") {
+                num.value = (Math.sqrt(+acc));
+            } else if (op === "ent(x)") {
+                if (+acc >= 0) {
+                    num.value = (Math.floor(+acc));
+                } else {
+                    num.value = (Math.ceil(+acc));
+                }
+            }
+        }
+
+        function inic() {
+            num = document.getElementById("num");
+            oMsj = document.getElementById("msj");
+        }
+
+        function vaciar() {
+            num.value = "";
+            clear_msj();
+        }
+
+        function mostrarMensaje(cMsj) {
+            oMsj.innerHTML = cMsj;
+        }
+
+        function clear_msj() {
+            mostrarMensaje("");
+        }
+
+        function cambiarEstadoBloqueoBotones(cTipo, nEstado) {
+            var oRef;
+            if (cTipo === "dec") {
+                oRef = document.getElementById("dec");
+            } else if (cTipo === "bin") {
+
+            }
+        }
+        $("#raiz").on("click", 
+                    function() {
+                        num = $("#num");
+                        num.val( Math.sqrt( num.val() ) );
+                        $("#num").focus();
+                    }
+                );
+                
+                $("#parte_entera").on("click", 
+                    function() {
+                        num = $("#num");
+                        if( num.val() > 0 ) {
+                            num.val( Math.floor( num.val() ) );
+                        } else {
+                            num.val( -Math.ceil( num.val() ) );
+                        }
+                        $("#num").focus();
+                    }
+                );
+                
+                $("#potencia_2_a_N").on("click", 
+                    function() {
+                        num = $("#num");
+                        num.val( Math.pow( 2, num.val() ) );
+                        $("#num").focus();
+                    }
+                );
+                
+                $("#factorial").on("click", 
+                    function() {
+                        num = $("#num");
+                        var res = num.val();
+                        if( $.isNumeric( num.val() ) ) {
+                            var counter = num.val();
+                            counter--;
+                            while( counter > 1 ) {
+                                res*= counter;
+                                counter--;
+                                if( !$.isNumeric( num.val() ) ) {
+                                    break;
+                                }
+                            } 
+                        } else {
+                            res = "ERROR: No es un número!" ;
+                        }
+                        num.val( res );
+                        $("#num").focus();
+                    }
+                );
+
+        
+    </script>
+</head>
+
+<body onLoad="inic()">
+    <h1>Buenos días, bienvenido a la calculadora de Veronica Quintero</h1>
+    <br/>
+    <p>Número:
+        <input type="text" size="12" id="num" onClick="vaciar()">
+        <span id="msj"></span>
+    </p>
+    <p id="dec">
+        <button onClick="mas()">+</button>
+        <button onClick="menos()">-</button>
+        <button onClick="multiplica()">*</button>
+        <button onClick="divide()">/</button>
+        <button onClick="x_elevado_y()">x^y</button>
+    </p>
+    <p>
+        <button onClick="cuadrado()">x^2</button>
+        <button onClick="inversa()">1/x</button>
+        <button onClick="raizCuadrada()">sqrt(x)</button>
+        <button onClick="parteEntera()">ent(x)</button>
+    </p>
+    <p>
+        <button id="raiz">&radic;</button>
+            <button id="parte_entera">Parte entera</button>
+            <button id="potencia_2_a_N">2<sup>n</sup></button>
+            <button id="factorial">n!</button>
+
+    </p>
+    <p>Total:
+        <button id="igual" onClick="calcular()">=</button>
+    </p>
+    <br/>
+    <br/>
+    <hr/>
+  
+</body>
+
+</html>
