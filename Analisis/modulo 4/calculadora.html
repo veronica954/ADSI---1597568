@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo</title>
+    <meta charset="utf-8">
+    
+    <style type="text/css">
+        h1 {
+            color:white;
+            background-color: #6982C8;
+            padding: .5em 2em;
+            text-align: center;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var num, acc = 0,
+            op = "",
+            oMsj = Object;
+
+        function mas() {
+            acc = +num.value;
+            op = "+";
+            mostrarMensaje(op);
+        }
+
+        function menos() {
+            acc = +num.value;
+            op = "-";
+            mostrarMensaje(op);
+        }
+
+        function multiplica() {
+            acc = +num.value;
+            op = "*";
+            mostrarMensaje(op);
+        }
+
+        function divide() {
+            acc = +num.value;
+            op = "/";
+            mostrarMensaje(op);
+        }
+
+        function x_elevado_y() {
+            acc = +num.value;
+            op = "x^y";
+            mostrarMensaje(op);
+        }
+
+        function cuadrado() {
+            acc = +num.value;
+            op = "x^2";
+            calcular();
+        }
+
+        function inversa() {
+            acc = +num.value;
+            op = "1/x";
+            calcular();
+        }
+
+        function raizCuadrada() {
+            acc = +num.value;
+            op = "sqrt(x)";
+            calcular();
+        }
+
+        function parteEntera() {
+            acc = +num.value;
+            op = "ent(x)";
+            calcular();
+        }
+
+        function calcular() {
+            clear_msj();
+            if (op === "+") {
+                num.value = (+acc) + (+num.value);
+            } else if (op === "-") {
+                num.value = (+acc) - (+num.value);
+            } else if (op === "*") {
+                num.value = (+acc) * (+num.value);
+            } else if (op === "/") {
+                num.value = (+acc) / (+num.value);
+            } else if (op === "x^y") {
+                num.value = (Math.pow(+acc, +num.value));
+            } else if (op === "x^2") {
+                num.value = (+acc) * (+acc);
+            } else if (op === "1/x") {
+                num.value = 1 / (+acc);
+            } else if (op === "sqrt(x)") {
+                num.value = (Math.sqrt(+acc));
+            } else if (op === "ent(x)") {
+                if (+acc >= 0) {
+                    num.value = (Math.floor(+acc));
+                } else {
+                    num.value = (Math.ceil(+acc));
+                }
+            }
+        }
+
+        function inic() {
+            num = document.getElementById("num");
+            oMsj = document.getElementById("msj");
+        }
+
+        function vaciar() {
+            num.value = "";
+            clear_msj();
+        }
+
+        function mostrarMensaje(cMsj) {
+            oMsj.innerHTML = cMsj;
+        }
+
+        function clear_msj() {
+            mostrarMensaje("");
+        }
+
+        function cambiarEstadoBloqueoBotones(cTipo, nEstado) {
+            var oRef;
+            if (cTipo === "dec") {
+                oRef = document.getElementById("dec");
+            } else if (cTipo === "bin") {
+
+            }
+        }
+        
+    </script>
+</head>
+
+<body onLoad="inic()">
+    <h1>Buenos días, bienvenido a la calculadora de Veronica Quintero</h1>
+    <br/>
+    <p>Número:
+        <input type="text" size="12" id="num" onClick="vaciar()">
+        <span id="msj"></span>
+    </p>
+    <p id="dec">
+        <button onClick="mas()">+</button>
+        <button onClick="menos()">-</button>
+        <button onClick="multiplica()">*</button>
+        <button onClick="divide()">/</button>
+        <button onClick="x_elevado_y()">x^y</button>
+    </p>
+    <p>
+        <button onClick="cuadrado()">x^2</button>
+        <button onClick="inversa()">1/x</button>
+        <button onClick="raizCuadrada()">sqrt(x)</button>
+        <button onClick="parteEntera()">ent(x)</button>
+    </p>
+    <p>Total:
+        <button id="igual" onClick="calcular()">=</button>
+    </p>
+    <br/>
+    <br/>
+    <hr/>
+    <pre>
+Entrega P2P obligatoria
+Entrega. 
+
+Añadir a la calculadora el siguiente título:
+
+“Buenos días, bienvenido a la calculadora de &lt;nombre y apellido de la persona&gt;”
+
+Integrar además en una sola calculadora los siguientes botones de operaciones matemáticas:
+
+1) Operaciones unitarias (con un solo operando): 
+1.1) x^2 (número elevado al cuadrado)
+1.2) 1/x (inverso del número)
+1.3) sqrt(x) (raiz cuadrada del número)
+1.4) parte_entera(x) (parte entera de x: si x es positivo devuelve Math.floor(x) y si es negativo devuelve Math.ceil(x))
+
+2) Operaciones binarias (con dos operandos):
+2.1) +. -. *, / (suma, resta, multiplicación y división)
+2.2) x^y (x elevado a y)    
+    </pre>
+</body>
+
+</html>
